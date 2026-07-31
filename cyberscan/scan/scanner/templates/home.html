@@ -1571,6 +1571,29 @@ tbody tr:hover{
 
 }
 
+
+.badge.success{
+    background:#16a34a;
+    color:#fff;
+}
+
+.badge.warning{
+    background:#f59e0b;
+    color:#fff;
+}
+
+.badge.danger{
+    background:#dc2626;
+    color:#fff;
+}
+
+.badge.safe{
+    background:#16a34a;
+    color:#fff;
+}
+
+
+
 /* RESPONSIVE */
 
 @media(max-width:1100px){
@@ -1848,6 +1871,14 @@ font-size:34px;
 
             <div class="info">
 
+                <h4>Risk Percentage</h4>
+
+                <p>{{ risk_percentage }}</p>
+
+            </div>
+
+            <div class="info">
+
                 <h4>Analysis ID</h4>
 
                 <small>{{ analysis_id }}</small>
@@ -1902,7 +1933,81 @@ font-size:34px;
 
         </div>
 
+        <div class="score-section">
 
+            <h3 class="section-title">
+
+                Prediction Score Table
+
+            </h3>
+
+            <div class="table-area">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Metric</th>
+
+                            <th>Prediction</th>
+
+                            <th>Score</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+
+                            <td>Overall Risk Score</td>
+
+                            <td>{{ risk.prediction }}</td>
+
+                            <td><span class="badge {{ overall.color }}">{{ risk.score }}/100</span></td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td> Confidence score</td>
+
+                            <td>{{ risk.prediction }}</td>
+
+                            <td><span class="badge {{ overall.color }}">{{ risk.confidence }}%</span></td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>Overall Assessment</td>
+
+                            <td>{{ overall.label }}</td>
+
+                            <td><span class="badge {{ overall.color }}">{{ risk_percentage }}</span></td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>VirusTotal Result</td>
+
+                            <td>{{ verdict }}</td>
+
+                            <td><span class="badge {{ overall.color }}">{{ malicious }}/{{ total }} detections</span></td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
 
         <!-- ENGINE TABLE -->
 
