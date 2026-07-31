@@ -248,6 +248,46 @@ header p{
 
 }
 
+/* OVERALL ASSESSMENT */
+
+.overall-banner{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:22px 28px;
+
+    border-radius:14px;
+
+    margin-bottom:35px;
+
+    color:#fff;
+
+    font-size:20px;
+
+    font-weight:600;
+
+}
+
+.overall-banner.success{ background:#16a34a; }
+.overall-banner.warning{ background:#f59e0b; }
+.overall-banner.danger{ background:#dc2626; }
+
+.overall-banner .sub{
+
+    font-size:14px;
+
+    font-weight:400;
+
+    opacity:.9;
+
+    margin-top:4px;
+
+}
+
 /* INFO GRID */
 
 .info-grid{
@@ -1720,6 +1760,8 @@ font-size:34px;
             <div class="sub">Combined verdict from VirusTotal + AI Risk Engine</div>
         </div>
 
+        <div>{{ risk_percentage }}</div>
+
     </div>
 
 
@@ -1954,7 +1996,7 @@ font-size:34px;
             </div>
 
             <div class="verdict-box">
-                <h4>ML Prediction</h4>
+                <h4>Parallel Analysis</h4>
                 <p>{{ ml_prediction }}</p>
             </div>
 
